@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/fetchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fetch Repos"
@@ -17,8 +17,9 @@
         android:layout_margin="10dp"/>
 
     <EditText
+        android:id="@+id/userName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
-        android:layout_above="@+id/button"/>
+        android:layout_above="@+id/fetchButton"/>
 </RelativeLayout>
