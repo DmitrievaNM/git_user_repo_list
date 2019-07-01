@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/fetchButton"
+        android:id="@+id/fetch_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/fetch_repos"
@@ -16,19 +16,18 @@
         android:layout_margin="10dp"/>
 
     <EditText
-        android:id="@+id/userName"
+        android:id="@+id/user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/name"
-        android:layout_above="@+id/fetchButton"
+        android:layout_above="@+id/fetch_button"
         android:inputType="text" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/textView" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_repos"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/user_name"/>
+
 </RelativeLayout>

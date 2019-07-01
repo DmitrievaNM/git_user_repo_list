@@ -3,4 +3,5 @@
     <string name="fetch_repos">Fetch Repos</string>
     <string name="name">Name</string>
     <string name="textView">TextView</string>
+    <string name="text">Text</string>
 </resources>
