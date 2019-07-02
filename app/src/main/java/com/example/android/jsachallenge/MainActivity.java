@@ -19,7 +19,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-
     private Button fetchButton;
     private EditText userNameEditText;
 
@@ -66,9 +65,8 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        mAdapter = new RepoAdapter(MainActivity.this, mRepos);
+        mAdapter = new RepoAdapter(mRepos);
         recyclerView.setAdapter(mAdapter);
-
 
     }
 
@@ -76,10 +74,9 @@ public class MainActivity extends AppCompatActivity {
         mService.listRepos(user).enqueue(new Callback<List<Repo>>() {
             @Override
             public void onResponse(@NonNull Call<List<Repo>> call, @NonNull Response<List<Repo>> response) {
-
                 mRepos = response.body();
-                mAdapter.notifyDataSetChanged();
-
+                mAdapter = new RepoAdapter(mRepos);
+                recyclerView.setAdapter(mAdapter);
             }
 
             @Override

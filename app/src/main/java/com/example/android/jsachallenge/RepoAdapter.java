@@ -1,9 +1,9 @@
 package com.example.android.jsachallenge;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -11,27 +11,23 @@ import java.util.List;
 
 public class RepoAdapter extends RecyclerView.Adapter<RepoAdapter.RepoViewHolder>{
     private List<Repo> reposList;
-    private Context context;
-    private LayoutInflater inflater;
 
     public static class RepoViewHolder extends RecyclerView.ViewHolder {
         public TextView textView;
-        RepoViewHolder(TextView v) {
+        public RepoViewHolder(View v) {
             super(v);
-            textView = v;
+            textView = v.findViewById(R.id.name_of_repo);
         }
     }
 
-    RepoAdapter(Context context, List<Repo> reposList) {
-        this.context=context;
-        inflater= LayoutInflater.from(context);
+    public RepoAdapter(List<Repo> reposList) {
         this.reposList = reposList;
     }
 
     @NonNull
     @Override
     public RepoAdapter.RepoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        TextView v = (TextView) LayoutInflater.from(parent.getContext()).inflate(R.layout.repo_name, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.repo_name, parent, false);
 
         return new RepoViewHolder(v);
     }
