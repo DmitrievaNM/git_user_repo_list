@@ -1,3 +1,7 @@
+/*
+ * @author Natalia Dmitrieva
+ */
+
 package com.example.android.jsachallenge;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
